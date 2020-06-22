@@ -20,6 +20,9 @@ iptables -A FORWARD -i tuntcp443 -o ens2 -m state --state RELATED,ESTABLISHED -j
 iptables -A FORWARD -i ens2 -o  tunudp1194 -m state --state RELATED,ESTABLISHED -j ACCEPT
 iptables -A FORWARD -i ens2 -o tuntcp443  -m state --state RELATED,ESTABLISHED -j ACCEPT
 
+sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
 # Drop all other sources of traffic
 iptables -A INPUT -j DROP
 
