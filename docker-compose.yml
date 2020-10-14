@@ -20,7 +20,7 @@ services:
   web:
     build: ./web
     environment:
-      - WEB_DOMAIN="${WEB_DOMAIN}"
+      - WEB_DOMAIN=${WEB_DOMAIN}
       - TRANSMISSION_HOST=${TRANSMISSION_HOST}
       - SSL_CERTIF=${SSL_CERTIF}
       - SSL_CERTIF_KEY=${SSL_CERTIF_KEY}
