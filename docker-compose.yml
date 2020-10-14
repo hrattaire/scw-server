@@ -9,6 +9,14 @@ services:
       - ${TORRENT_DOWNLOAD_DIR}:/downloads
     ports:
       - "51413:51413"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 100M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
   web:
     build: ./web
     environment:
@@ -26,3 +34,11 @@ services:
       - "443:443"
     depends_on:
       - transmission
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 100M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
