@@ -6,7 +6,8 @@ RUN echo "## Install packages ###"  \
          findutils \
          php7-fpm  \
          php7-session \
-         php7-json
+         php7-json \
+         unzip
 
 VOLUME /var/www
 VOLUME /var/Downloads
