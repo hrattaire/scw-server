@@ -3,4 +3,5 @@
 ##############################
 TORRENT_DOWNLOAD_DIR="${PWD}/Downloads"
 NGINX_WEB_DIR="${PWD}/web/www"
-NGINX_WEB_SECRETS="${PWD}/secrets"
+NGINX_WEB_SSL="${PWD}/certs"
+NGINX_WEB_RESTRICT="${PWD}/restrict"

@@ -22,7 +22,8 @@ services:
     volumes:
       - ${TORRENT_DOWNLOAD_DIR}:/var/Downloads
       - ${NGINX_WEB_DIR}:/var/www
-      - ${NGINX_WEB_SECRETS}:/etc/secrets
+      - ${NGINX_WEB_SSL}:/etc/nginx/ssl
+      - ${NGINX_WEB_RESTRICT}:/etc/nginx/restrict
     ports:
       - "80:80"
       - "443:443"

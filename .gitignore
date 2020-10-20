@@ -3,4 +3,6 @@ secrets/*
 Old/*
 config
 nginx.env
+cert
+restrict
 

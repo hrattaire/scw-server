@@ -10,7 +10,6 @@ RUN echo "## Install packages ###"  \
 
 VOLUME /var/www
 VOLUME /var/Downloads
-VOLUME /etc/secrets
 
 RUN echo "## Configure php-fpm ###" \
 && sed -i "s|;listen.owner\s*=\s*nobody|listen.owner = nginx|g" /etc/php7/php-fpm.d/www.conf \
