@@ -25,7 +25,7 @@ echo "NGINX configuration files OK"
 
 cd $downloads_dir
 wget -O h5ai.zip $h5ai_url
-unzip h5ai.zip
+unzip -n h5ai.zip
 echo "h5ai installed"
 
 # ENTRYPOINT
