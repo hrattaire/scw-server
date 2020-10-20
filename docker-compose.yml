@@ -3,9 +3,7 @@ version: "3.8"
 services:
   transmission:
     build: ./transmission
-    command: --config-dir=/config
     volumes:
-      - ${TRANSMISSION_CONFIG_DIR}:/config
       - ${TORRENT_DOWNLOAD_DIR}:/downloads
     ports:
       - "51413:51413"
@@ -19,12 +17,8 @@ services:
           memory: 20M
   web:
     build: ./web
-    environment:
-      - WEB_DOMAIN=${WEB_DOMAIN}
-      - TRANSMISSION_HOST=${TRANSMISSION_HOST}
-      - SSL_CERTIF=${SSL_CERTIF}
-      - SSL_CERTIF_KEY=${SSL_CERTIF_KEY}
-      - NGINX_HTPASSWD=${NGINX_HTPASSWD}
+    env_file:
+      - nginx.env
     volumes:
       - ${TORRENT_DOWNLOAD_DIR}:/var/Downloads
       - ${NGINX_WEB_DIR}:/var/www

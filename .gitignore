@@ -1,4 +1,6 @@
 Downloads/*
 secrets/*
 Old/*
-.env
+config
+nginx.env
+

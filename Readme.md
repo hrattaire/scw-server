@@ -1,5 +1,10 @@
 ## Installation
 
+**Mount**
+
+
+
+
 **Configuration**
 
 Set the environment variables into the .env file:
@@ -8,7 +13,6 @@ Set the environment variables into the .env file:
 
 `vi .env`
 
-- TRANSMISSION_CONFIG_DIR: Host absolute path to the config directory (should contains at least settings.json)
 - TORRENT_DOWNLOAD_DIR: Host absolute path to your download folder (where torrents will be stored)
 - NGINX_WEB_DIR: Host absolute path to the www directory (root directory for hyour webserver)
 - NGINX_WEB_SECRETS: Host absolute path to the directory that contains the ssl certificates + htpasswd file

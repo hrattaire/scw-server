@@ -17,5 +17,7 @@ apk add --no-cache \
          unzip
 
 EXPOSE 9091 51413
-VOLUME /downloads /config
-ENTRYPOINT ["/usr/bin/transmission-daemon", "--foreground"]
+RUN mkdir /config
+COPY config/settings.json /config
+VOLUME /downloads
+ENTRYPOINT ["/usr/bin/transmission-daemon", "--foreground", "--config-dir=/config"]
