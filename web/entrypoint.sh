@@ -28,6 +28,7 @@ wget -O h5ai.zip $h5ai_url
 unzip -n h5ai.zip
 echo "h5ai installed"
 
+
 # ENTRYPOINT
 echo "Starting server"
 /usr/sbin/php-fpm7 && nginx -g "daemon off;"

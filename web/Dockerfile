@@ -7,7 +7,8 @@ RUN echo "## Install packages ###"  \
          php7-fpm  \
          php7-session \
          php7-json \
-         unzip
+         unzip \
+         openssl
 
 VOLUME /var/www
 VOLUME /var/Downloads
@@ -17,7 +18,7 @@ RUN echo "## Configure php-fpm ###" \
 &&  sed -i "s|;listen.group\s*=\s*nobody|listen.group = nginx|g" /etc/php7/php-fpm.d/www.conf
 
 RUN rm /etc/nginx/conf.d/*.conf
-COPY nginx/conf.d/ /etc/nginx/conf.d/
+COPY nginx/ /etc/nginx/
 
 COPY entrypoint.sh /entrypoint.sh
 

@@ -2,7 +2,8 @@ Downloads/*
 secrets/*
 Old/*
 config
-nginx.env
+*.env
+*.pem
 cert
 restrict
 

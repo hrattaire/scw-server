@@ -1,29 +1,38 @@
 ## Installation
 
-**Mount**
+**Clone repo**
+```
+git clone https://github.com/hrattaire/scw-server.git
+```
 
-
-
-
-**Configuration**
-
-Set the environment variables into the .env file:
-
-`mv .env.example .env`
-
-`vi .env`
-
+**Set configuration**
+```
+cd scw-server
+mv config.example config
+```
 - TORRENT_DOWNLOAD_DIR: Host absolute path to your download folder (where torrents will be stored)
 - NGINX_WEB_DIR: Host absolute path to the www directory (root directory for hyour webserver)
-- NGINX_WEB_SECRETS: Host absolute path to the directory that contains the ssl certificates + htpasswd file
+- NGINX_WEB_SSL: Host absolute path to the directory that contains the ssl certificates
+- NGINX_WEB_RESTRICT: Host absolute path to the directory that contains the htpasswd file
+
+**Set nginx**
+```
+mv web/nginx.env.example web/nginx.env
+```
+
+**Generate stronger DH parameters**
+```
+openssl dhparam -out web/nginx/dhparam.pem
+```
+
 
 **Deploy**
 
 Run the following commands:
 
-`source config`
-
-`docker-compose up`
+```
+./run.sh
+```
 
 ## FAQ
 ### Generate SSL Certificate in local

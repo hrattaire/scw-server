@@ -18,7 +18,7 @@ services:
   web:
     build: ./web
     env_file:
-      - nginx.env
+      - ./web/nginx.env
     volumes:
       - ${TORRENT_DOWNLOAD_DIR}/:/var/Downloads
       - ${NGINX_WEB_DIR}/:/var/www
