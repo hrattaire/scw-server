@@ -3,6 +3,7 @@ set -eu
 
 #### Configuration ####
 nginx_conf_dir=/etc/nginx/conf.d/*.conf
+nginx_module_dir=/etc/nginx/conf.d/modules/*.conf
 env_var_list='${WEB_DOMAIN} ${TRANSMISSION_HOST} ${SSL_CERTIF} ${SSL_CERTIF_KEY} ${SSL_TRUSTED_CERTIF} ${NGINX_HTPASSWD}'
 h5ai_url="https://release.larsjung.de/h5ai/h5ai-0.29.2.zip"
 downloads_dir="/var/Downloads"
@@ -19,6 +20,9 @@ done
 echo "Env variables OK"
 
 for filename in $nginx_conf_dir; do
+    replace_env_var "$env_var_list" $filename
+done
+for filename in $nginx_module_dir; do
     replace_env_var "$env_var_list" $filename
 done
 echo "NGINX configuration files OK"
